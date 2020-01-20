@@ -1,0 +1,14 @@
+.container-fluid {
+    border: 1px solid black;
+}
+.container {
+    border: 1px solid black;
+}
+.row {
+    border: 1px solid blue;
+}
+
+
+.card {
+    margin: auto;
+}
