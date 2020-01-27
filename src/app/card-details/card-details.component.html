@@ -1,12 +1,18 @@
 <div class="container-fluid">
   <div class="row">
     <div class="offset-lg-4 col-lg-4 col-sm-12 col-md-12" style = "border: 1px solid red;">
-      <div class="card">
+      <div *ngIf="!flashcard" class="card">
+        <h5 class="card-header">Card is not found, maybe the API is down</h5>
+        
+      </div>      
+      <div *ngIf="flashcard" class="card">
         <h5 class="card-header">Click button to flip card for English Translation</h5>
         <div class="card-body">
           
-          <p class="card-text">Japanese Word retrieved from API</p>
-          <a href="#" class="btn btn-primary">Translation</a>
+          <p class="card-text">Japanese word: {{flashcard.word}}</p>
+
+          <a href="#" class="btn btn-primary" (click) = "getFlashcard()">Translation</a>
+            
         </div>
       </div>
     </div>
