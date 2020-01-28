@@ -10,29 +10,28 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardReviewComponent implements OnInit {
   flashcards: Flashcard[];
-
-  constructor(private repository: FlashcardRepository, private actr: ActivatedRoute) {
-    // this.actr.data.map(data => data.cres.json()).subscribe(res) => {console.log(res)});
-    this.getFlashcards(); 
-
-  
+  index: number;
+  data: any;
+  flip: boolean;
+  constructor(private repository: FlashcardRepository, private activatedRoute: ActivatedRoute) {
+    this.index = 0;
+    this.flip = false;
   }
 
-  // public get flashcards() {
-  //   return this.repository.getCards();
-  //   //return this.flashcards != null;
-  // }
-
-  public get hasCards() {
-    return this.flashcards != null;
-  }
-  public getFlashcards(){
-    this.flashcards =  this.repository.getCards();
-     console.log(JSON.stringify(this.flashcards));
+  flipCard() {
+    this.flip = true;
   }
 
+  nextCard() {
+    if (this.index < this.flashcards.length - 1) {
+      this.flip = false;
+      this.index += 1;
+    }
+  }
   ngOnInit() {
-    console.log("Copmponent initiated");
+    this.data = this.activatedRoute.snapshot.data;
+    this.flashcards = this.data.message;
+    console.log(this.flashcards);
   }
 
 }

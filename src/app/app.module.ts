@@ -4,18 +4,25 @@ import { RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { CardReviewModule } from "./cardReview/cardReview.module";
 import { CardReviewComponent } from "./cardReview/cardReview.component";
-import { FlashCardResolver } from './model/flashcard.resolver';
+import { FlashCardResolver } from "./model/flashcard.resolver";
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     CardReviewModule,
-    RouterModule.forRoot([{ 
-      path: "review", 
-      component: CardReviewComponent,
-      resolve: {cres: FlashCardResolver}
-    }])
+    RouterModule.forRoot([
+      {
+        path: "review",
+        component: CardReviewComponent,
+        resolve: { message: FlashCardResolver }
+      },
+      {
+        path: "**",
+        redirectTo: "review"
+      }
+    ])
   ],
+  exports: [RouterModule],
   providers: [FlashCardResolver],
   bootstrap: [AppComponent]
 })
