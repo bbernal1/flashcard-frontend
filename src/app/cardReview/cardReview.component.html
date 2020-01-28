@@ -1,16 +1,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="offset-lg-4 col-lg-4 col-sm-12 col-md-12" style = "border: 1px solid red;">
-      <div *ngIf="false" class="card">
+      <div *ngIf="flashcards.length == 0" class="card">
         <h5 class="card-header">Card is not found, maybe the API is down</h5>
         <a href="#" class="btn btn-primary" (click) = getFlashcards()>Translation</a>
 
       </div>      
-      <div *ngIf="true" class="card">
+      <div *ngIf="flashcards.length != 0" class="card">
         <h5 class="card-header">Click button to flip card for English Translation</h5>
         <div class="card-body"> 
           <p class="card-text">Japanese Word: </p>
-          <a href="#" class="btn btn-primary" (click) = getFlashcards()>Translation</a>
+          <a class="btn btn-primary" (click) = getFlashcards()>Translation</a>
         </div>
       </div>
     </div>
