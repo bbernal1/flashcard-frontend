@@ -6,10 +6,10 @@ import { Flashcard } from "./flashcard.model";
 export class RestDataSource {
   baseUrl: string;
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:8080/";
+    this.baseUrl = "http://192.168.1.170:8080/";
   }
 
-  getCard(): Observable<Flashcard> {
-      return this.httpClient.get<Flashcard>(this.baseUrl + "getCard");
+  getCards(): Observable<Flashcard[]> {
+      return this.httpClient.get<Flashcard[]>(this.baseUrl + "getCards");
   }
 }

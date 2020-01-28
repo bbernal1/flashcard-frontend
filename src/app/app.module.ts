@@ -1,18 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { CardDetailsModule } from './card-details/card-details.module';
-
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { AppComponent } from "./app.component";
+import { CardReviewModule } from "./cardReview/cardReview.module";
+import { CardReviewComponent } from "./cardReview/cardReview.component";
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    CardDetailsModule
+    CardReviewModule,
+    RouterModule.forRoot([{ path: "review", component: CardReviewComponent }])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

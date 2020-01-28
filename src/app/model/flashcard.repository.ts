@@ -5,17 +5,18 @@ import { RestDataSource } from "./rest.datasource";
 @Injectable()
 export class FlashcardRepository {
     
-    public flashcard: Flashcard;
+    public flashcards: Flashcard[];
     constructor(private restDataSource: RestDataSource) {}
 
-    getCard(): Flashcard {
-        this.restDataSource.getCard().subscribe(data =>
+    getCards(): Flashcard[] {
+        this.restDataSource.getCards().subscribe(data =>
         {
             //console.log(data);
-            this.flashcard = data;
+            this.flashcards = data;
             //console.log(JSON.stringify(this.flashcard));
         });
         //console.log(JSON.stringify(this.flashcard))
-        return this.flashcard;
+        return this.flashcards;
+        
     }
 }
