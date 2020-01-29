@@ -3,18 +3,29 @@
     <div class="offset-lg-4 col-lg-4 col-sm-12 col-md-12" style="border: 1px solid red;">
       <div *ngIf="flashcards == null" class="card">
         <h5 class="card-header">Card is not found, maybe the API is down</h5>
-        <a href="#" class="btn btn-primary" (click)=getFlashcards()>Translation</a>
 
+        <a href="#" class="btn btn-primary" (click)="getFlashcards()">Translation</a>
       </div>
       <div *ngIf="flashcards != null" class="card">
-        <h5 class="card-header">Click button to flip card for English Translation</h5>
-        <div class="card-body">
-          <p class="card-text">Japanese Word: {{flashcards[index].word}}</p>
-          <a *ngIf="!flip" class="btn btn-primary" (click)=flipCard()>Get Translation</a>
-          <span *ngIf="flip" class="card-text">{{flashcards[index].translation}}</span>
-          <br /><br />
-          <a class="btn btn-primary" (click) = "nextCard()">Next card</a>
-  
+        <div *ngIf="reviewDone">
+          <h5 class="card-header">
+            Card review is finished.
+          </h5>
+          <a class="btn btn-primary" (click)="restartReview()">Restart review</a>
+        </div>
+        <div *ngIf="!reviewDone">
+          <h5 class="card-header">
+            Click button to flip card for English Translation
+          </h5>
+          <div class="card-body">
+            <p class="card-text">Japanese Word: {{ flashcards[index].word }}</p>
+            <a *ngIf="!flip" class="btn btn-primary" (click)="flipCard()">Get Translation</a>
+            <span *ngIf="flip" class="card-text">{{
+              flashcards[index].translation
+            }}</span>
+            <br /><br />
+            <a class="btn btn-primary" (click)="nextCard()">Next card</a>
+          </div>
         </div>
       </div>
     </div>
