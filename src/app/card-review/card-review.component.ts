@@ -5,8 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-card-review',
-  templateUrl: './cardReview.component.html',
-  styleUrls: ['./cardReview.component.css']
+  templateUrl: './card-review.component.html',
+  styleUrls: ['./card-review.component.css']
 })
 export class CardReviewComponent implements OnInit {
   flashcards: Flashcard[];
