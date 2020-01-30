@@ -1,3 +1,16 @@
+version 0.1.0
+# Flashcard Application using Angular
+
+#Backend Application cannot be ran yet as mongodb credentials need to be setup for public use
+1. Git clone project
+2. Run npm install to obtain modules and other dependencies as specified in package.json
+3. Run Backend Application at https://github.com/bbernal1/flashcard-backend
+3. Run ng serve to start application.
+
+#This application is still a work in progress 
+
+
+
 # Flashcards
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
