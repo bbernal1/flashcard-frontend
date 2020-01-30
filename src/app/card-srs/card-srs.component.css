@@ -1,0 +1,15 @@
+.col-lg-4 {
+    border: 1px solid red;
+}
+
+.container-fluid {
+    border: 1px solid black;
+}
+
+.row {
+    border: 1px solid blue;
+}
+
+.card {
+    margin: auto;
+}
