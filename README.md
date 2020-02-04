@@ -4,7 +4,6 @@
 
 This is a pet project to display skills in using Java and Angular to create a fullstack application. I personally have an interest in learning Japanese and discovered Spaced Repetition applications such as Anki and Memrise which help in learning vocabulary. Therefore, I thought I could combine my passion for programming and create an application of my own that uses a Spaced Repetition algorithm to help me learn Japanese. This app is primarily for learning purposes and as a result will be constantly changing as my skills in Angular increase. 
 
-Backend Application cannot be ran yet as mongodb credentials need to be setup for public use
 1. Git clone project
 2. Run npm install to obtain modules and other dependencies as specified in package.json
 3. Run Backend Application at https://github.com/bbernal1/flashcard-backend
