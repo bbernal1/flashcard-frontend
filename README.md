@@ -1,27 +1,17 @@
-# Flashcards
+version 0.1.0
+# Flashcard Application using Angular
+# Eventually I will host this app publicly for any prospective employers who want to see my work.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+This is a pet project to display skills in using Java and Angular to create a fullstack application. I personally have an interest in learning Japanese and discovered Spaced Repetition applications such as Anki and Memrise which help in learning vocabulary. Therefore, I thought I could combine my passion for programming and create an application of my own that uses a Spaced Repetition algorithm to help me learn Japanese. This app is primarily for learning purposes and as a result will be constantly changing as my skills in Angular increase. 
 
-## Development server
+Backend Application cannot be ran yet as mongodb credentials need to be setup for public use
+1. Git clone project
+2. Run npm install to obtain modules and other dependencies as specified in package.json
+3. Run Backend Application at https://github.com/bbernal1/flashcard-backend
+3. Run ng serve to start application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Features
+### Homepage
+Any URL should redirect to Homepage. This page contains information about the app and links to the Card Review mode and SRS Review mode
+### All Card Review
+This section of the application will review all cards
