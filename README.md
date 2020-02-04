@@ -1,4 +1,4 @@
-version 0.1.0
+
 # Flashcard Application using Angular
 # Eventually I will host this app publicly for any prospective employers who want to see my work.
 
@@ -15,3 +15,16 @@ Backend Application cannot be ran yet as mongodb credentials need to be setup fo
 Any URL should redirect to Homepage. This page contains information about the app and links to the Card Review mode and SRS Review mode
 ### All Card Review
 This section of the application will review all cards
+
+### Version History
+version 0.1.0
+Started project
+
+version 0.2.0
+Added component for reviewing all cards
+
+version 0.3.0
+Added component for reviewing scheduled cards and routing
+
+version 0.4.0
+Added homepage component
