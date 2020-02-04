@@ -7,28 +7,29 @@ import { CardReviewComponent } from "./card-review/card-review.component";
 import { FlashCardResolver } from "./model/flashcard.resolver";
 import { CardSrsComponent } from './card-srs/card-srs.component';
 import { CardSrsModule } from './card-srs/card-srs.module';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomepageComponent],
   imports: [
     BrowserModule,
     CardReviewModule,
     CardSrsModule,
     RouterModule.forRoot([
       {
-        path: "review",
+        path: "allreview",
         component: CardReviewComponent,
         resolve: { message: FlashCardResolver }
       },
       {
-        path:"srs",
+        path:"schedreview",
         component: CardSrsComponent,
         resolve: { message: FlashCardResolver }
 
       },
       {
         path: "**",
-        redirectTo: "review"
+        component: HomepageComponent
       }
     ])
   ],
