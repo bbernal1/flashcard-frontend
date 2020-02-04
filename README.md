@@ -13,8 +13,11 @@ Backend Application cannot be ran yet as mongodb credentials need to be setup fo
 ## Features
 ### Homepage
 Any URL should redirect to Homepage. This page contains information about the app and links to the Card Review mode and SRS Review mode
-### All Card Review
+### Review All Cards
 This section of the application will review all cards
+
+### Review Scheduled Cards
+This section will review cards that are due today or past due
 
 ### Version History
 version 0.1.0
