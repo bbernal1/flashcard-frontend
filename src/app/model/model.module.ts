@@ -9,7 +9,7 @@ import { FlashCardResolver } from './flashcard.resolver';
   imports: [HttpClientModule],
   //providers: [FlashcardRepository, Flashcard, RestDataSource ]
   //providers: []
-  providers: [FlashcardRepository, RestDataSource,FlashCardResolver ]
+  providers: [FlashcardRepository, RestDataSource, FlashCardResolver ]
 })
 
 export class ModelModule {}

@@ -8,8 +8,12 @@ export class RestDataSource {
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://192.168.1.170:8080/";
   }
-
+  //GET
   getCards(): Observable<Flashcard[]> {
       return this.httpClient.get<Flashcard[]>(this.baseUrl + "getCards");
+  }
+  //PUT
+  sendRating(flashcard: Flashcard, quality: number): Observable<Flashcard> {
+      return this.httpClient.put<Flashcard>(this.baseUrl + "flashcard/" + quality, flashcard);
   }
 }

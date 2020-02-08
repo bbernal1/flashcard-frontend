@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Flashcard } from "./flashcard.model";
 import { RestDataSource } from "./rest.datasource";
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable()
 export class FlashcardRepository {
@@ -17,6 +19,14 @@ export class FlashcardRepository {
         });
         //console.log(JSON.stringify(this.flashcard))
         return this.flashcards;
-        
+
+    }
+
+    sendRating(flashcard :Flashcard, quality: number){
+        let response :Flashcard;
+        console.log(quality);
+       return this.restDataSource.sendRating(flashcard, quality);
+        //while(response == null) {}
+        // console.log(response);
     }
 }
