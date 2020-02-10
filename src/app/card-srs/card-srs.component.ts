@@ -14,8 +14,12 @@ export class CardSrsComponent implements OnInit {
   index: number;
   data: any;
   flip: boolean;
+
+  rated: boolean;
   reviewDone: boolean;
+  
   dueDate: string;
+  interval: number;
   constructor(private repository: FlashcardRepository, private activatedRoute: ActivatedRoute) {
     this.data = this.activatedRoute.snapshot.data;
 
@@ -28,13 +32,17 @@ export class CardSrsComponent implements OnInit {
   flipCard() {
     this.flip = true;
   }
+
   restartReview() {
     this.index = 0;
+    this.flip = false;
+    this.rated = false;
     this.reviewDone = false;
   }
 
   nextCard() {
     if (this.index < this.flashcards.length - 1) {
+      this.rated = false;
       this.flip = false;
       this.index += 1;
     }
@@ -43,11 +51,12 @@ export class CardSrsComponent implements OnInit {
     }
   }
 
-  sendRating(e) {
-    console.log(e.target.value);
-    this.repository.sendRating(this.flashcards[this.index], e.target.value).subscribe( (data) =>
-      this.dueDate = data.dueDate
-    )
+  sendRating(event) {
+    this.rated = true;
+    this.repository.sendRating(this.flashcards[this.index], event.target.value).subscribe( (data) =>
+    {  this.dueDate = data.dueDate;
+      this.interval = data.interval;
+    })
 
   }
 

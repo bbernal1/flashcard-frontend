@@ -8,9 +8,10 @@ import { FlashCardResolver } from "./model/flashcard.resolver";
 import { CardSrsComponent } from './card-srs/card-srs.component';
 import { CardSrsModule } from './card-srs/card-srs.module';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AddCardComponent } from './add-card/add-card.component';
 
 @NgModule({
-  declarations: [AppComponent, HomepageComponent],
+  declarations: [AppComponent, HomepageComponent, AddCardComponent],
   imports: [
     BrowserModule,
     CardReviewModule,

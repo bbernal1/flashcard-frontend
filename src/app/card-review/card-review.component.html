@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="row">
-    <div class = "col-md-1 offset-md-3 col-12 text-center">
+    <div class="col-12 text-center">
       <a href="" class="btn btn-primary">Homepage</a>
     </div>
-    <div class="col-md-4 col-12" style="border: 1px solid red;">
+    <div class="offset-md-4 col-md-4 col-12">
       <div *ngIf="flashcards == null" class="card">
         <h5 class="card-header">Card is not found, maybe the API is down</h5>
 
-        <a href="#" class="btn btn-primary" (click)="getFlashcards()">Translation</a>
+        <a href="#"  class="btn btn-primary" (click)="getFlashcards()">Translation</a>
       </div>
       <div *ngIf="flashcards != null" class="card">
         <div *ngIf="reviewDone">
@@ -22,12 +22,12 @@
           </h5>
           <div class="card-body">
             <p class="card-text">Japanese Word: {{ flashcards[index].word }}</p>
-            <a *ngIf="!flip" class="btn btn-primary" (click)="flipCard()">Get Translation</a>
+            <button *ngIf="!flip" class="btn btn-primary"(click)="flipCard()">Get Translation</button>
             <span *ngIf="flip" class="card-text">{{
               flashcards[index].translation
             }}</span>
             <br /><br />
-            <a class="btn btn-primary" (click)="nextCard()">Next card</a>
+            <button class="btn btn-primary" (click)="nextCard()">Next card</button>
           </div>
         </div>
       </div>

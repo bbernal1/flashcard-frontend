@@ -26,6 +26,7 @@ export class CardReviewComponent implements OnInit {
   }
   restartReview() {
     this.index = 0;
+    this.flip = false;
     this.reviewDone = false;
   }
 
