@@ -9,6 +9,7 @@ import { CardSrsComponent } from './card-srs/card-srs.component';
 import { CardSrsModule } from './card-srs/card-srs.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AddCardComponent } from './add-card/add-card.component';
+import { SchedResolver } from './model/sched.resolver';
 
 @NgModule({
   declarations: [AppComponent, HomepageComponent, AddCardComponent],
@@ -18,24 +19,27 @@ import { AddCardComponent } from './add-card/add-card.component';
     CardSrsModule,
     RouterModule.forRoot([
       {
-        path: "allreview",
+        path: "all-review",
         component: CardReviewComponent,
         resolve: { message: FlashCardResolver }
       },
       {
-        path:"schedreview",
+        path:"sched-review",
         component: CardSrsComponent,
-        resolve: { message: FlashCardResolver }
-
+        resolve: { message: SchedResolver }
+      },
+      {
+        path:"add-card",
+        component: AddCardComponent
       },
       {
         path: "**",
         component: HomepageComponent
-      }
+      },
     ])
   ],
   exports: [RouterModule],
-  providers: [FlashCardResolver],
+  providers: [FlashCardResolver ,SchedResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
