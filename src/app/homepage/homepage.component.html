@@ -1,29 +1,33 @@
 <main role="main" class="inner cover">
-  <p class="lead text-center">
-    This app is for learning Japanese by using flashcards.
-  </p>
+  <p class="lead text-center">Flashcard Application</p>
 
   <div class="container-fluid">
     <div class="row">
-      <div class = "col-12 col-md-4 offset-md-4 text-center">
-        <p class="lead">This app has two modes:</p>
-        <p class="lead">
-          All Review Mode will let you review all of the cards in the deck without
-          spaced repetition. Spaced Repetition Mode will let you review all the cards
-          that are due today. Due dates are calculated based off of ratings (1-5) that
-          judge how easy/hard the card is.
-        </p>     
+      <div class="col-12 col-md-4 offset-md-4">
+        <p>
+          I am currently learning Japanese and I've been using Anki(https://apps.ankiweb.net/), a Spaced Repetition App, for helping me learn the language. 
+          This is a basic flashcard app inspired from Anki for making and reviewing flashcards. The
+          flashcards are stored in a mongoDB database and retrieved via a Java
+          backend. I am currently working on being able to add flashcards to the
+          database via the app(the current cards have been added by interacting with mongoDB directly)
+        </p>
+        <p>
+          The flashcards can be graded based on the difficulty so that a due date for review can be calculated.
+          I implemented the SM-2 Spaced Repetition algorithm for calculation of the due dates. More information about the algorithm can be found at https://en.wikipedia.org/wiki/SuperMemo and https://www.supermemo.com/en/archives1990-2015/english/ol/sm2
+        </p>
       </div>
       <div
         class="col-6 col-md-3 offset-md-3 text-center"
-        style="border: 1px solid red;">
-        <a href="/sched-review" class="btn btn-lg btn-primary"
-        >Review Scheduled Cards</a> 
-      </div>
-      <div class="col-6 col-md-3 text-center" style="border: 1px solid red;">
-        <a  href="/all-review" class="btn btn-lg btn-primary"
-        >Review All Cards</a
+        style="border: 1px solid red"
       >
+        <a href="/sched-review" class="btn btn-lg btn-primary"
+          >Click to review cards that are due</a
+        >
+      </div>
+      <div class="col-6 col-md-3 text-center" style="border: 1px solid red">
+        <a href="/all-review" class="btn btn-lg btn-primary"
+          >Click to view all cards</a
+        >
       </div>
     </div>
   </div>
