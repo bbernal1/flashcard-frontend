@@ -19,17 +19,17 @@ import { SchedResolver } from './model/sched.resolver';
     CardSrsModule,
     RouterModule.forRoot([
       {
-        path: "all-review",
+        path: "view_cards",
         component: CardReviewComponent,
         resolve: { message: FlashCardResolver }
       },
       {
-        path:"sched-review",
+        path:"review_cards",
         component: CardSrsComponent,
         resolve: { message: SchedResolver }
       },
       {
-        path:"add-card",
+        path:"add_card",
         component: AddCardComponent
       },
       {
