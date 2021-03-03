@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Flashcard } from '../model/flashcard.model';
+import { FlashcardRepository } from '../model/flashcard.repository';
 
 @Component({
   selector: 'app-add-card',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCardComponent implements OnInit {
 
+  newCard: Flashcard;
+  addCard(newCard: Flashcard): Flashcard {
+    return null;
+  }
+  get jsonCard() {return JSON.stringify(this.newCard);}
   constructor() { }
 
   ngOnInit() {
+    this.newCard = new Flashcard();
   }
 
 }

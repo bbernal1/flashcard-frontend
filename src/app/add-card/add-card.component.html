@@ -1,1 +1,55 @@
-<p>add-card works!</p>
+<div class="m-2">
+  <div class="bg-info text-white mb-2 p-2">Model Data: {{ jsonCard }}</div>
+  <form novalidate (ngSubmit)="addCard(newCard)">
+    <div class="form-group">
+      <label>Word/Phrase</label
+      ><input
+        class="form-control"
+        [(ngModel)]="newCard.word"
+        name="word"
+        required
+        #word="ngModel"
+      />
+      <ul class="text-danger list-unstyled" *ngIf="word.dirty && word.invalid">
+        <li *ngIf="word.errors.required">You must enter a word/phrase</li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <label>Reading</label
+      ><input
+        class="form-control"
+        [(ngModel)]="newCard.reading"
+        name="reading"
+        #reading="ngModel"
+        required
+      />
+      <ul
+        class="text-danger list-unstyled"
+        *ngIf="reading.dirty && reading.invalid"
+      >
+        <li *ngIf="reading.errors.required">
+          You must enter a reading
+        </li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <label>Translation</label
+      ><input
+        class="form-control"
+        [(ngModel)]="newCard.translation"
+        name="translation"
+        #translation="ngModel"
+        required
+      />
+      <ul
+        class="text-danger list-unstyled"
+        *ngIf="translation.dirty && translation.invalid"
+      >
+        <li *ngIf="translation.errors.required">
+          You must enter a translation
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary" type="submit">Create</button>
+  </form>
+</div>

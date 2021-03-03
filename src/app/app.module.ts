@@ -10,19 +10,18 @@ import { CardSrsModule } from './card-srs/card-srs.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AddCardComponent } from './add-card/add-card.component';
 import { SchedResolver } from './model/sched.resolver';
+import { AddCardModule } from "./add-card/add-card.module";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [AppComponent, HomepageComponent, AddCardComponent],
+  declarations: [AppComponent, HomepageComponent],
   imports: [
     BrowserModule,
     CardReviewModule,
+    
     CardSrsModule,
+    AddCardModule,
     RouterModule.forRoot([
-      {
-        path: "view_cards",
-        component: CardReviewComponent,
-        resolve: { message: FlashCardResolver }
-      },
       {
         path:"review_cards",
         component: CardSrsComponent,
@@ -31,11 +30,15 @@ import { SchedResolver } from './model/sched.resolver';
       {
         path:"add_card",
         component: AddCardComponent
-      },
-      {
+      },      {
+        path: "**",
+        component: CardReviewComponent,
+        resolve: { message: FlashCardResolver }
+      }
+      /*{
         path: "**",
         component: HomepageComponent
-      },
+      },*/
     ])
   ],
   exports: [RouterModule],
