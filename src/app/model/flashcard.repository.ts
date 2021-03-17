@@ -21,7 +21,14 @@ export class FlashcardRepository {
         return this.flashcards;
 
     }
-
+    addCard(flashcard: Flashcard) {
+        flashcard.easiness= 2.5;
+        flashcard.interval = 1;
+        flashcard.repetitions = 0;
+        flashcard.dueDate = "2020-02-03T19:00:00";
+        console.log(flashcard);
+        this.restDataSource.addCard(flashcard).subscribe();
+    }
     sendRating(flashcard :Flashcard, quality: number){
         let response :Flashcard;
         console.log(quality);

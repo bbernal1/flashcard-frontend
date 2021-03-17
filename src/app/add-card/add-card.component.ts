@@ -9,15 +9,18 @@ import { FlashcardRepository } from '../model/flashcard.repository';
 })
 export class AddCardComponent implements OnInit {
 
-  newCard: Flashcard;
-  addCard(newCard: Flashcard): Flashcard {
-    return null;
+  flashcard: Flashcard;
+  constructor(private repository: FlashcardRepository){
+    
   }
-  get jsonCard() {return JSON.stringify(this.newCard);}
-  constructor() { }
+  addCard(flashcard: Flashcard) {
+    this.repository.addCard(flashcard);
+  }
+  get jsonCard() {return JSON.stringify(this.flashcard);}
+  
 
   ngOnInit() {
-    this.newCard = new Flashcard();
+    this.flashcard = new Flashcard();
   }
 
 }

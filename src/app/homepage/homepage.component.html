@@ -1,33 +1,39 @@
 <main role="main" class="inner cover">
-  <p class="lead text-center">Flashcard Application</p>
-
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 col-md-4 offset-md-4">
-        <p>
-          I am currently learning Japanese and I've been using Anki(https://apps.ankiweb.net/), a Spaced Repetition App, for helping me learn the language. 
-          This is a basic flashcard app inspired from Anki for making and reviewing flashcards. 
-        </p><p>The flashcards are stored in a mongoDB database and retrieved via a Java
-          backend. I am currently working on being able to add flashcards to the
-          database via the app(the current cards have been added by interacting with mongoDB directly)
-        </p>
-        <p>
-          The flashcards can be graded based on the difficulty so that a due date for review can be calculated.
-          I implemented the SM-2 Spaced Repetition algorithm for calculation of the due dates. More information about the algorithm can be found at https://en.wikipedia.org/wiki/SuperMemo and https://www.supermemo.com/en/archives1990-2015/english/ol/sm2
-        </p>
-      </div>
       <div
-        class="col-6 col-md-3 offset-md-3 text-center"
-        style="border: 1px solid red"
+        class="btn-toolbar mb-2"
+        role="toolbar"
+        aria-label="Toolbar with button groups"
       >
-        <a href="/review_cards" class="btn btn-lg btn-primary"
-          >Click to review cards that are due</a
-        >
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+          <a href="" class="btn btn-primary" routerLink="">Back</a>
+        </div>
       </div>
-      <div class="col-6 col-md-3 text-center" style="border: 1px solid red">
-        <a href="/view_cards" class="btn btn-lg btn-primary"
-          >Click to view all cards</a
-        >
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4 offset-md-4">
+        <p class="lead text-center">Flashcard Application</p>
+        <p>
+          I am currently learning Japanese and I've been using
+          Anki(https://apps.ankiweb.net/), a Spaced Repetition App, for helping
+          me learn the language. This is a basic flashcard app inspired from
+          Anki for making and reviewing flashcards.
+        </p>
+        <p>
+          The flashcards are stored in a mongoDB database and retrieved via a
+          Java backend. I am currently working on being able to add flashcards
+          to the database via the app(the current cards have been added by
+          interacting with mongoDB directly)
+        </p>
+        <p>
+          The flashcards can be graded based on the difficulty so that a due
+          date for review can be calculated. I implemented the SM-2 Spaced
+          Repetition algorithm for calculation of the due dates. More
+          information about the algorithm can be found at
+          https://en.wikipedia.org/wiki/SuperMemo and
+          https://www.supermemo.com/en/archives1990-2015/english/ol/sm2
+        </p>
       </div>
     </div>
   </div>

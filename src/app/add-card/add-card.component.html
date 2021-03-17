@@ -1,11 +1,11 @@
 <div class="m-2">
   <div class="bg-info text-white mb-2 p-2">Model Data: {{ jsonCard }}</div>
-  <form novalidate (ngSubmit)="addCard(newCard)">
+  <form novalidate (ngSubmit)="addCard(flashcard)">
     <div class="form-group">
       <label>Word/Phrase</label
       ><input
         class="form-control"
-        [(ngModel)]="newCard.word"
+        [(ngModel)]="flashcard.word"
         name="word"
         required
         #word="ngModel"
@@ -18,7 +18,7 @@
       <label>Reading</label
       ><input
         class="form-control"
-        [(ngModel)]="newCard.reading"
+        [(ngModel)]="flashcard.reading"
         name="reading"
         #reading="ngModel"
         required
@@ -36,7 +36,7 @@
       <label>Translation</label
       ><input
         class="form-control"
-        [(ngModel)]="newCard.translation"
+        [(ngModel)]="flashcard.translation"
         name="translation"
         #translation="ngModel"
         required
@@ -50,6 +50,7 @@
         </li>
       </ul>
     </div>
-    <button class="btn btn-primary" type="submit">Create</button>
+    <button class="btn btn-primary" type="submit"> Create </button>
+    <button class="btn btn-primary" routerLink=""> Back </button>
   </form>
 </div>

@@ -32,7 +32,7 @@ export class CardReviewComponent implements OnInit {
   ngOnInit() {
     this.data = this.activatedRoute.snapshot.data;
     this.flashcards = this.data.message;
-    console.log(this.flashcards);
+    //console.log(this.flashcards);
   }
 
 }
