@@ -1,24 +1,52 @@
 <div class="container-fluid">
   <div
-    class="btn-toolbar mb-2"
+    class="btn-toolbar mb-3 mt-3"
     role="toolbar"
     aria-label="Toolbar with button groups"
   >
     <div class="btn-group mr-2" role="group" aria-label="First group">
-      <a href="" class="btn btn-primary" routerLink="add">Add New Card</a>
+      <button class="btn btn-primary" routerLink="add">Add New Card</button>
     </div>
-    <div class="btn-group mr-2" role="group" aria-label="First group">
-      <a href="" class="btn btn-primary" routerLink="about">About</a>
+    <div class="btn-group mr-2" role="group" aria-label="Second group">
+      <button class="btn btn-primary" routerLink="about">About</button>
     </div>
   </div>
-  <div *ngIf="flashcards == null" class="card">
+  
+  <!--<div *ngIf="flashcards == null" class="card">
     <h5 class="card-header">No cards found, maybe the backend API is down</h5>
-  </div>
+  </div> -->
   <div class="row">
     <div class="col-4">
-      <div *ngFor="let card of flashcards; let i = index">
-        <div *ngIf="i % 3 == 0">
-          <div class="card">
+      
+      <ng-template [fcForOf]="getCards()" let-item let-idx = "idx">
+        <div *ngIf = "idx%3 == 0">
+          <div class="card mb-3">
+            <h5 class="card-header">Card {{idx}} </h5>
+            <div class="card-body">
+              <p class="card-text"> Word: {{ item.word }}</p>
+              <p class="card-text"> Reading: {{ item.reading }}</p>
+              <p class="card-text">
+                Translation: {{ item.translation }}
+              </p>
+              <p class="card-text">Translation: {{ item.dueDate }}</p>
+              <button type="button" class="btn btn-primary mr-2" >
+                Edit
+              </button>
+              <button
+                type="button" class="btn btn-primary" (click)="deleteCard(idx)"
+              >
+               Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    
+    </div>
+    <div class="col-4">
+      <div *ngFor="let card of getCards(); let i = index">
+        <div *ngIf="i % 3 == 1">
+          <div class="card mb-3">
             <h5 class="card-header">Card {{ i + 1 }}</h5>
             <div class="card-body">
               <p class="card-text">Word: {{ flashcards[i].word }}</p>
@@ -27,46 +55,45 @@
                 Translation: {{ flashcards[i].translation }}
               </p>
               <p class="card-text">Translation: {{ flashcards[i].dueDate }}</p>
+              <button class="btn btn-primary mr-2" routerLink="about">
+                Edit
+              </button>
+              <button
+                type="button"
+                (click)="deleteCard(i)"
+                class="btn btn-primary"
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-4">
-      <div *ngFor="let card of flashcards; let i = index">
-        <div *ngIf="i % 3 == 1">
-            <div class="card">
-              <h5 class="card-header">Card {{ i + 1 }}</h5>
-              <div class="card-body">
-                <p class="card-text">Word: {{ flashcards[i].word }}</p>
-                <p class="card-text">Reading: {{ flashcards[i].reading }}</p>
-                <p class="card-text">
-                  Translation: {{ flashcards[i].translation }}
-                </p>
-                <p class="card-text">
-                  Translation: {{ flashcards[i].dueDate }}
-                </p>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div *ngFor="let card of flashcards; let i = index">
+      <div *ngFor="let card of getCards(); let i = index">
         <div *ngIf="i % 3 == 2">
-            <div class="card">
-              <h5 class="card-header">Card {{ i + 1 }}</h5>
-              <div class="card-body">
-                <p class="card-text">Word: {{ flashcards[i].word }}</p>
-                <p class="card-text">Reading: {{ flashcards[i].reading }}</p>
-                <p class="card-text">
-                  Translation: {{ flashcards[i].translation }}
-                </p>
-                <p class="card-text">
-                  Translation: {{ flashcards[i].dueDate }}
-                </p>
-              </div>
+          <div class="card mb-3">
+            <h5 class="card-header">Card {{ i + 1 }}</h5>
+            <div class="card-body">
+              <p class="card-text">Word: {{ flashcards[i].word }}</p>
+              <p class="card-text">Reading: {{ flashcards[i].reading }}</p>
+              <p class="card-text">
+                Translation: {{ flashcards[i].translation }}
+              </p>
+              <p class="card-text">Translation: {{ flashcards[i].dueDate }}</p>
+              <button class="btn btn-primary mr-2" routerLink="about">
+                Edit
+              </button>
+              <button
+                type="button"
+                (click)="deleteCard(i)"
+                class="btn btn-primary"
+              >
+                Delete
+              </button>
             </div>
+          </div>
         </div>
       </div>
     </div>

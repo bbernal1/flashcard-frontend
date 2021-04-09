@@ -7,16 +7,16 @@ import { CardReviewComponent } from "./card-review/card-review.component";
 import { FlashCardResolver } from "./model/flashcard.resolver";
 import { CardSrsComponent } from './card-srs/card-srs.component';
 import { CardSrsModule } from './card-srs/card-srs.module';
-import { HomepageComponent } from './homepage/homepage.component';
-import { AddCardComponent } from './add-card/add-card.component';
 import { SchedResolver } from './model/sched.resolver';
 import { AddCardModule } from "./add-card/add-card.module";
-import { FormsModule } from "@angular/forms";
 import { routing } from "./app.routing";
+import { HomepageModule } from "./homepage/homepage.module";
+
 
 @NgModule({
-  declarations: [AppComponent, HomepageComponent],
+  declarations: [AppComponent],
   imports: [
+    HomepageModule,
     BrowserModule,
     CardReviewModule,
     routing,

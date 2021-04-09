@@ -13,7 +13,7 @@
             Click button to flip card for English Translation
           </h5>
           <div class="card-body">
-            <p class="card-text">Japanese Word: {{ flashcards[index].word }}</p>
+            <p class="card-text"> Japanese Word: {{flashcards[index].word}}</p>
 
             <a *ngIf="!flip" class="btn btn-primary" (click)="flipCard()"
               >Get Translation</a

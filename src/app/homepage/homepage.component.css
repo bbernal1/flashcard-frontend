@@ -1,3 +1,14 @@
 .btn-toolbar{
-    justify-content: center;    
-  }
+  justify-content: center;    
+}
+.container-fluid {
+  border: 1px solid black;
+}
+
+.row {
+  border: 1px solid blue;
+}
+
+.col-4 {
+  border: 1px solid red;
+}

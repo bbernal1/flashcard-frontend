@@ -10,6 +10,7 @@ const routes: Routes = [
   {
     path: "about",
     component: HomepageComponent,
+    resolve: { message: FlashCardResolver }
   },
   {
     path: "review",

@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { Flashcard } from "./flashcard.model";
 
 
+
 @Injectable()
 export class RestDataSource {
   baseUrl: string;
@@ -23,11 +24,15 @@ export class RestDataSource {
 
   //POST
   addCard(flashcard: Flashcard) {
-    console.log("here");
     return this.httpClient.post<Flashcard>(
       this.baseUrl + "flashcards",
-      flashcard
-    );
+      flashcard);
+  }
+  
+  //DELETE
+  deleteCard(flashcard: Flashcard, id) {
+    console.log("deleting");
+    return this.httpClient.delete<Flashcard>(this.baseUrl+"flashcards/"+id);
   }
 
   //PUT

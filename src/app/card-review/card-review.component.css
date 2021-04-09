@@ -6,8 +6,10 @@
   border: 1px solid blue;
 }
 
-
+.col-4 {
+  border: 1px solid red;
+}
 
 .btn-toolbar{
     justify-content: center;    
-  }
+}
