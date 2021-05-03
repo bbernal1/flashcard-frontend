@@ -26,10 +26,10 @@ const routes: Routes = [
     component: CardReviewComponent,
     resolve: { message: FlashCardResolver },
    }
-  // ,{
-  //   path: "**",
-  //   component: CardReviewComponent,
-  //   resolve: { message: FlashCardResolver },
-  // }
+  ,{
+    path: "**",
+    component: CardReviewComponent
+    //,resolve: { message: FlashCardResolver },
+  }
 ];
 export const routing = RouterModule.forRoot(routes);

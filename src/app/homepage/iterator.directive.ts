@@ -28,6 +28,8 @@ export class FcIteratorDirective {
   @Input("fcForOf")
   data: any;
   ngDoCheck() {
+    //this.differ = <IterableDiffer<any>>this.differs.find(this.data).create();
+
     console.log("in do check method")
     let changes = this.differ.diff(this.data);
     if (changes != null) {
@@ -76,8 +78,10 @@ export class FcIteratorDirective {
     // this.container.createEmbeddedView(this.template,
     // new PaIteratorContext(this.data[i],i));}
     //{$implicit:this.data[i]}
-
+    console.log("in directive")
     this.differ = <IterableDiffer<any>>this.differs.find(this.data).create();
+
+
   }
 }
 class PaIteratorContext {

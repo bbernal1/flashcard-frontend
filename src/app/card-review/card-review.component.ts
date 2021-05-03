@@ -26,6 +26,12 @@ export class CardReviewComponent implements OnInit {
   getCards() :Flashcard[] {
     return this.repository.getCards();
   }
+  updateCards(){
+    this.repository.updateCards();
+  }
+  public trackItem (index: number, item: Flashcard) {
+    return item.id;
+  }
   
 
   flipCard() {
@@ -36,14 +42,16 @@ export class CardReviewComponent implements OnInit {
     this.reviewDone = false;
   }
   
-  deleteCard(idx) {
+  deleteCard(card) {
     console.log("fun called");
     // let idx = this.cardIdx.get(item);
-    this.repository.deleteCard(this.flashcards[idx]);
+    this.repository.deleteCard(card);
+    setTimeout(() => this.repository.updateCards(),50);
+     
     //const index = this.flashcards.indexOf(, 0);
-    if (idx > -1) {
-      this.flashcards.splice(idx, 1);
-    }
+    // if (idx > -1) {
+    //   this.flashcards.splice(idx, 1);
+    // }
     // this.data = this.repository.getCards();
     // this.lCol = new Array<Flashcard>();
     // for (let i = 0; i < this.flashcards.length; i++) {

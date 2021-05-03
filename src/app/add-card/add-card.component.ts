@@ -15,6 +15,7 @@ export class AddCardComponent implements OnInit {
   }
   addCard(flashcard: Flashcard) {
     this.repository.addCard(flashcard);
+    this.repository.updateCards();
   }
   get jsonCard() {return JSON.stringify(this.flashcard);}
   

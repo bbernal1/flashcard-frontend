@@ -11,23 +11,28 @@ export class FlashcardRepository {
     constructor(private restDataSource: RestDataSource) {
         this.restDataSource.getCards().subscribe(data =>
             {
-                //console.log(data);
+                
                 this.flashcards = data;
-                //console.log(JSON.stringify(this.flashcard));
+                
             });
     }
 
     getCards(): Flashcard[] {
-        // this.restDataSource.getCards().subscribe(data =>
-        // {
-        //     //console.log(data);
-        //     this.flashcards = data;
-        //     //console.log(JSON.stringify(this.flashcard));
-        // });
+        
         // //console.log(JSON.stringify(this.flashcard))
         return this.flashcards;
     }
-
+    updateCards() {
+        
+        // //console.log(JSON.stringify(this.flashcard))
+        this.restDataSource.getCards().subscribe(data =>
+            {
+                
+                this.flashcards = data;
+                
+            });
+            //return this.flashcards
+    }
     addCard(flashcard: Flashcard) {
         flashcard.easiness= 2.5;
         flashcard.interval = 1;
