@@ -50,7 +50,7 @@
         </li>
       </ul>
     </div>
-    <button class="btn btn-primary" type="submit"> Create </button>
-    <button class="btn btn-primary" type="button" routerLink=""> Back </button>
+    <button class="btn btn-primary" type="submit"> {{editing == true ? "Save" : "Create"}} </button>
+    <button class="btn btn-primary" type="button" [routerLink] = "xd"> Back </button>
   </form>
 </div>

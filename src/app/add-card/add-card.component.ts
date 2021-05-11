@@ -1,27 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { Flashcard } from '../model/flashcard.model';
-import { FlashcardRepository } from '../model/flashcard.repository';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Flashcard } from "../model/flashcard.model";
+import { FlashcardRepository } from "../model/flashcard.repository";
 
 @Component({
-  selector: 'app-add-card',
-  templateUrl: './add-card.component.html',
-  styleUrls: ['./add-card.component.css']
+  selector: "app-add-card",
+  templateUrl: "./add-card.component.html",
+  styleUrls: ["./add-card.component.css"],
 })
-export class AddCardComponent implements OnInit {
-
+export class AddCardComponent{
   flashcard: Flashcard;
-  constructor(private repository: FlashcardRepository){
-    
+  editing: boolean;
+  xd: string = "";
+  constructor(
+    private repository: FlashcardRepository,
+    activeRoute: ActivatedRoute,
+    private router: Router
+  ) {
+    this.flashcard = new Flashcard();
+    this.editing = activeRoute.snapshot.params["mode"] == "edit";
+
+    let id = activeRoute.snapshot.params["id"];
+    if (id != null) {
+      
+      let word = activeRoute.snapshot.params["word"];
+      let reading = activeRoute.snapshot.params["reading"];
+      let translation = activeRoute.snapshot.params["translation"];
+      //console.log(word);
+      if (word != null && reading != null && translation != null) {
+
+        this.flashcard.id = id;
+        this.flashcard.word = word;
+        this.flashcard.reading = reading;
+        console.log(this.flashcard.word);
+        this.flashcard.translation = translation;
+      } 
+      console.log(this.jsonCard);
+      // else {
+      //   Object.assign(this.flashcard, model.getProduct(id) || new Product());
+      // }
+    }
   }
   addCard(flashcard: Flashcard) {
     this.repository.addCard(flashcard);
     this.repository.updateCards();
   }
-  get jsonCard() {return JSON.stringify(this.flashcard);}
-  
-
-  ngOnInit() {
-    this.flashcard = new Flashcard();
+  get jsonCard() {
+    return JSON.stringify(this.flashcard);
   }
+
 
 }

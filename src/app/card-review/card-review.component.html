@@ -30,8 +30,9 @@
               <p class="card-text">
                 Translation: {{ card.translation }}
               </p>
-              <p class="card-text">Translation: {{ card.dueDate }}</p>
-              <button type="button" class="btn btn-warning btn-sm mr-3" >
+              <p class="card-text">Review Date: {{ card.dueDate }}</p>
+              <button type="button" class="btn btn-warning btn-sm mr-3" [routerLink] = "['/form', 'edit', card.id,
+              {word: card.word, reading: card.reading, translation: card.translation}]" >
                 Edit
               </button>
               <button
@@ -55,8 +56,9 @@
               <p class="card-text">
                 Translation: {{ card.translation }}
               </p>
-              <p class="card-text">Translation: {{ card.dueDate }}</p>
-              <button class="btn btn-warning btn-sm mr-3" routerLink="about">
+              <p class="card-text">Review Date: {{ card.dueDate }}</p>
+              <button class="btn btn-warning btn-sm mr-3" [routerLink] = "['/form', 'edit', card.id,
+              {word: card.word, reading: card.reading, translation: card.translation}]">
                 Edit
               </button>
               <button
@@ -82,8 +84,9 @@
               <p class="card-text">
                 Translation: {{ card.translation }}
               </p>
-              <p class="card-text">Translation: {{ card.dueDate }}</p>
-              <button class="btn btn-warning btn-sm mr-3" routerLink="about">
+              <p class="card-text">Review Date: {{ card.dueDate }}</p>
+              <button class="btn btn-warning btn-sm mr-3" [routerLink] = "['/form', 'edit', card.id,
+              {word: card.word, reading: card.reading, translation: card.translation}]">
                 Edit
               </button>
               <button
