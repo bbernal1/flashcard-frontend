@@ -24,12 +24,7 @@ const routes: Routes = [
   {
     path: "form/:mode/:id",
     component: AddCardComponent,
-  },
-  {
-    path: "",
-    component: CardReviewComponent
-    //,resolve: { message: FlashCardResolver },
-   }
+  }
   ,{
     path: "**",
     component: CardReviewComponent

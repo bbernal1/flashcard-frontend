@@ -11,7 +11,7 @@ import { FlashcardRepository } from "../model/flashcard.repository";
 export class AddCardComponent{
   flashcard: Flashcard;
   editing: boolean;
-  xd: string = "";
+
   constructor(
     private repository: FlashcardRepository,
     activeRoute: ActivatedRoute,
@@ -26,7 +26,6 @@ export class AddCardComponent{
       let word = activeRoute.snapshot.params["word"];
       let reading = activeRoute.snapshot.params["reading"];
       let translation = activeRoute.snapshot.params["translation"];
-      //console.log(word);
       if (word != null && reading != null && translation != null) {
 
         this.flashcard.id = id;
@@ -34,16 +33,12 @@ export class AddCardComponent{
         this.flashcard.reading = reading;
         console.log(this.flashcard.word);
         this.flashcard.translation = translation;
-      } 
-      console.log(this.jsonCard);
-      // else {
-      //   Object.assign(this.flashcard, model.getProduct(id) || new Product());
-      // }
+      }
     }
   }
   addCard(flashcard: Flashcard) {
     this.repository.addCard(flashcard);
-    this.repository.updateCards();
+    setTimeout(() => this.repository.updateCards(),50);
   }
   get jsonCard() {
     return JSON.stringify(this.flashcard);
