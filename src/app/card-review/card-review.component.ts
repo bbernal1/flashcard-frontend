@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component} from "@angular/core";
 import { FlashcardRepository } from "../model/flashcard.repository";
 import { Flashcard } from "../model/flashcard.model";
 import { ActivatedRoute } from "@angular/router";
@@ -8,6 +8,7 @@ import { ActivatedRoute } from "@angular/router";
   templateUrl: "./card-review.component.html",
   styleUrls: ["./card-review.component.css"],
 })
+
 export class CardReviewComponent {
   flashcards: Flashcard[];
   lCol: Flashcard[] = new Array<Flashcard>();
@@ -46,9 +47,12 @@ export class CardReviewComponent {
     this.reviewDone = false;
   }
 
-  deleteCard(card) {
-    console.log("fun called");
-    this.repository.deleteCard(card);
-    setTimeout(() => this.repository.updateCards(), 50);
+  showDueDate(flashcard: Flashcard): string {
+    return new Date(flashcard.dueDate).toLocaleDateString();
+  }
+
+  deleteCard(flashcard: Flashcard) {
+    this.repository.deleteCard(flashcard);
+    setTimeout(() => this.repository.updateCards(), 100);
   }
 }

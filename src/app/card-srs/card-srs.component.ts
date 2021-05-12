@@ -18,7 +18,7 @@ export class CardSrsComponent implements OnInit {
   rated: boolean;
   reviewDone: boolean;
   
-  dueDate: string;
+  dueDate: number;
   interval: number;
   constructor(private repository: FlashcardRepository, private activatedRoute: ActivatedRoute) {
     this.data = this.activatedRoute.snapshot.data;

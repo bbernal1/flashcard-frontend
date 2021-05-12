@@ -14,8 +14,8 @@ const routes: Routes = [
   },
   {
     path: "review",
-    component: CardSrsComponent,
-    resolve: { message: SchedResolver },
+    component: CardSrsComponent
+    //,resolve: { message: SchedResolver },
   },
   {
     path: "add",
@@ -24,8 +24,8 @@ const routes: Routes = [
   {
     path: "form/:mode/:id",
     component: AddCardComponent,
-  }
-  ,{
+  },
+  {
     path: "**",
     component: CardReviewComponent
     //,resolve: { message: FlashCardResolver },

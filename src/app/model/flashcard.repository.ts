@@ -37,7 +37,7 @@ export class FlashcardRepository {
         flashcard.easiness= 2.5;
         flashcard.interval = 1;
         flashcard.repetitions = 0;
-        flashcard.dueDate = "2020-02-03T19:00:00";
+        flashcard.dueDate = Date.now();
         this.restDataSource.addCard(flashcard).subscribe();
     }
 

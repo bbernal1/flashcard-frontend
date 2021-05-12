@@ -5,6 +5,6 @@ export class Flashcard {
   public easiness: number;
   public repetitions: number;
   public interval: number;
-  public dueDate: string;
+  public dueDate: number;
   public reading: string;
 }
