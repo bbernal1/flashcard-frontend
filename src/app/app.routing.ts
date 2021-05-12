@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from "@angular/router";
-import { AddCardComponent } from "./add-card/add-card.component";
+import { AddCardComponent} from "./add-card/add-card.component";
 import { CardReviewComponent } from "./card-review/card-review.component";
 import { CardSrsComponent } from "./card-srs/card-srs.component";
 import { HomepageComponent } from "./homepage/homepage.component";
@@ -9,8 +9,8 @@ import { SchedResolver } from "./model/sched.resolver";
 const routes: Routes = [
   {
     path: "about",
-    component: HomepageComponent,
-    resolve: { message: FlashCardResolver }
+    component: HomepageComponent
+    //,resolve: { message: FlashCardResolver }
   },
   {
     path: "review",

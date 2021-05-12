@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './card-srs.component.html',
   styleUrls: ['./card-srs.component.css']
 })
-export class CardSrsComponent implements OnInit {
+export class CardSrsComponent implements OnInit{
 
   flashcards: Flashcard[];
   index: number;
@@ -21,12 +21,22 @@ export class CardSrsComponent implements OnInit {
   dueDate: number;
   interval: number;
   constructor(private repository: FlashcardRepository, private activatedRoute: ActivatedRoute) {
-    this.data = this.activatedRoute.snapshot.data;
-
     this.index = 0;
     this.flip = false;
     this.reviewDone = false;
+    setTimeout(() => this.getCards(),1);
+  }
 
+  test() {
+    console.log(this.flashcards.toString())
+  }
+  
+  xd() {
+    return this.repository.getCards();
+  }
+
+  getCards() {
+    this.flashcards = this.repository.getCards();
   }
 
   flipCard() {

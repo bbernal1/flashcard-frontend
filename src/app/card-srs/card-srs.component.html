@@ -4,6 +4,10 @@
     <div class="col-12 text-center">
       <a href="" class="btn btn-primary">Homepage</a>
     </div>
+    
+    </div>
+    <button class = "btn btn-primary btn-sm"(click) = "getCards()">get cards</button>
+    <button class = "btn btn-primary btn-sm"(click) = "test()">show</button>
 
     <!--Column row 2-->
     <div class="offset-md-4 col-md-4 col-12">
@@ -92,10 +96,9 @@
       <div *ngIf="flashcards == null" class="card">
         <h5 class="card-header">Card is not found, maybe the API is down</h5>
 
-        <a href="#" class="btn btn-primary" (click)="getFlashcards()"
-          >Translation</a
-        >
+        <a href="#" class="btn btn-primary" (click)="getFlashcards()">
+          Translation</a>
       </div>
     </div>
   </div>
-</div>
+

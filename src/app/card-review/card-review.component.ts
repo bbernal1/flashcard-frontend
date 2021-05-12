@@ -10,22 +10,14 @@ import { ActivatedRoute } from "@angular/router";
 })
 
 export class CardReviewComponent {
-  flashcards: Flashcard[];
-  lCol: Flashcard[] = new Array<Flashcard>();
-  mCol: Flashcard[] = new Array<Flashcard>();
-  rCol: Flashcard[] = new Array<Flashcard>();
+
   data: any;
-  flip: boolean;
-  reviewDone: boolean;
-  cardIdx: Map<Flashcard, number> = new Map<Flashcard, number>();
 
   constructor(
     private repository: FlashcardRepository,
     private activatedRoute: ActivatedRoute
-  ) {
-    this.flip = false;
-    this.reviewDone = false;
-  }
+  ) {}
+
   getCards(): Flashcard[] {
     return this.repository.getCards();
   }
@@ -36,15 +28,6 @@ export class CardReviewComponent {
 
   public trackItem(index: number, item: Flashcard) {
     return item.id;
-  }
-
-  flipCard() {
-    this.flip = true;
-  }
-
-  restartReview() {
-    this.flip = false;
-    this.reviewDone = false;
   }
 
   showDueDate(flashcard: Flashcard): string {
