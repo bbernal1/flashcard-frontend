@@ -5,13 +5,9 @@
       <a href="" class="btn btn-primary">Homepage</a>
     </div>
     
-    </div>
-    <button class = "btn btn-primary btn-sm"(click) = "getCards()">get cards</button>
-    <button class = "btn btn-primary btn-sm"(click) = "test()">show</button>
-
     <!--Column row 2-->
     <div class="offset-md-4 col-md-4 col-12">
-      <div *ngIf="flashcards != null" class="card">
+      <div *ngIf="flashcards != null && flashcards.length != 0" class="card">
         <div *ngIf="!reviewDone">
           <h5 class="card-header">
             Click button to flip card for English Translation
@@ -77,8 +73,8 @@
             <div *ngIf="rated == true">
               <br />
               <p class="card-text">
-                Due date is now {{ interval }} hour(s) from now at the time
-                {{ dueDate }}
+                Due date is now {{ interval }} day(s) from now at the date
+                {{ showDueDate(dueDate) }}
               </p>
 
               <a class="btn btn-primary" (click)="nextCard()">Next card</a>
@@ -93,12 +89,9 @@
           <a href="/" class="btn btn-primary">Return to home page</a>
         </div>
       </div>
-      <div *ngIf="flashcards == null" class="card">
-        <h5 class="card-header">Card is not found, maybe the API is down</h5>
-
-        <a href="#" class="btn btn-primary" (click)="getFlashcards()">
-          Translation</a>
+      <div *ngIf="flashcards == null || flashcards.length == 0" class="card">
+        <h5 class="card-header">No cards are currently due</h5>
       </div>
     </div>
   </div>
-
+</div>

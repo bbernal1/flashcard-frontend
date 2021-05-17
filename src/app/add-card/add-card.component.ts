@@ -31,14 +31,13 @@ export class AddCardComponent{
         this.flashcard.id = id;
         this.flashcard.word = word;
         this.flashcard.reading = reading;
-        console.log(this.flashcard.word);
         this.flashcard.translation = translation;
       }
     }
   }
   addCard(flashcard: Flashcard) {
     this.repository.addCard(flashcard);
-    setTimeout(() => this.repository.updateCards(),100);
+    setTimeout(() => this.repository.updateCards(),1000);
     this.router.navigateByUrl("")
   }
   get jsonCard() {

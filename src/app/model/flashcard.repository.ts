@@ -50,7 +50,7 @@ export class FlashcardRepository {
         let response :Flashcard;
         console.log(quality);
        return this.restDataSource.sendRating(flashcard, quality);
-        //while(response == null) {}
+        // while(response == null) {}
         // console.log(response);
     }
 }

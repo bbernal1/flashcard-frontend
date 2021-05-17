@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { Flashcard } from '../model/flashcard.model';
 import { FlashcardRepository } from '../model/flashcard.repository';
 import { ActivatedRoute } from '@angular/router';
@@ -36,7 +36,20 @@ export class CardSrsComponent implements OnInit{
   }
 
   getCards() {
-    this.flashcards = this.repository.getCards();
+    this.flashcards = this.repository.getCards().filter((flashcard) => {
+      let dueDate = new Date(flashcard.dueDate*1000);
+      let curDate = new Date(Date.now());
+      if (dueDate.getMonth() < curDate.getMonth()) {
+        console.log("in 1st")
+        return true;
+      }
+      else if (dueDate.getMonth() == curDate.getMonth()) {
+        if (dueDate.getDay() <= curDate.getDay()){
+          return true;
+        }
+      }
+      return false;
+    });                                                   
   }
 
   flipCard() {
@@ -64,14 +77,15 @@ export class CardSrsComponent implements OnInit{
   sendRating(event) {
     this.rated = true;
     this.repository.sendRating(this.flashcards[this.index], event.target.value).subscribe( (data) =>
-    {  this.dueDate = data.dueDate;
+    { this.dueDate = data.dueDate;
       this.interval = data.interval;
     })
 
   }
-
+  showDueDate(dueDate: number): string {
+    return new Date(dueDate*1000).toLocaleDateString();
+  }
   ngOnInit() {
-    this.flashcards = this.data.message;
-    this.dueDate = this.flashcards[this.index].dueDate;
+
   }
 }

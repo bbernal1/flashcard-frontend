@@ -31,7 +31,7 @@ export class CardReviewComponent {
   }
 
   showDueDate(flashcard: Flashcard): string {
-    return new Date(flashcard.dueDate).toLocaleDateString();
+    return new Date(flashcard.dueDate*1000).toLocaleDateString();
   }
 
   deleteCard(flashcard: Flashcard) {
