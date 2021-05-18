@@ -1,12 +1,8 @@
 <div class="container-fluid">
+  
   <div class="row">
-    <!--Column row 1, Replace functionality with navbar-->
-    <div class="col-12 text-center">
-      <a href="" class="btn btn-primary">Homepage</a>
-    </div>
-    
-    <!--Column row 2-->
     <div class="offset-md-4 col-md-4 col-12">
+      <button type="button" class="btn btn-primary" (click)="retHome()">Home</button>
       <div *ngIf="flashcards != null && flashcards.length != 0" class="card">
         <div *ngIf="!reviewDone">
           <h5 class="card-header">
@@ -21,8 +17,7 @@
             <span *ngIf="flip" class="card-text">{{
               flashcards[index].translation
             }}</span>
-            <br /><br />
-            <div class="btn-group" role="group" aria-label="Basic example">
+            <div *ngIf="flip" class="btn-group" role="group" aria-label="Basic example">
               <button
                 type="button"
                 [disabled]="rated"
@@ -86,7 +81,7 @@
           <h5 class="card-header">
             Card review is finished.
           </h5>
-          <a href="/" class="btn btn-primary">Return to home page</a>
+          <button type="button" class="btn btn-primary" (click) = retHome()>Home</button>
         </div>
       </div>
       <div *ngIf="flashcards == null || flashcards.length == 0" class="card">

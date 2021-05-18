@@ -1,7 +1,7 @@
 import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { Flashcard } from '../model/flashcard.model';
 import { FlashcardRepository } from '../model/flashcard.repository';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-srs',
@@ -20,7 +20,7 @@ export class CardSrsComponent implements OnInit{
   
   dueDate: number;
   interval: number;
-  constructor(private repository: FlashcardRepository, private activatedRoute: ActivatedRoute) {
+  constructor(private repository: FlashcardRepository, private router: Router) {
     this.index = 0;
     this.flip = false;
     this.reviewDone = false;
@@ -84,6 +84,10 @@ export class CardSrsComponent implements OnInit{
   }
   showDueDate(dueDate: number): string {
     return new Date(dueDate*1000).toLocaleDateString();
+  }
+  retHome() {
+    this.repository.updateCards()
+    this.router.navigateByUrl("/home")
   }
   ngOnInit() {
 

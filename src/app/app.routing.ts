@@ -10,12 +10,10 @@ const routes: Routes = [
   {
     path: "about",
     component: HomepageComponent
-    //,resolve: { message: FlashCardResolver }
   },
   {
     path: "review",
     component: CardSrsComponent
-    //,resolve: { message: SchedResolver },
   },
   {
     path: "add",
@@ -26,9 +24,13 @@ const routes: Routes = [
     component: AddCardComponent,
   },
   {
-    path: "**",
+    path: "home",
     component: CardReviewComponent
-    //,resolve: { message: FlashCardResolver },
   }
+  // ,
+  // {
+  //   path: "**",
+  //   component: CardReviewComponent
+  // }
 ];
 export const routing = RouterModule.forRoot(routes);

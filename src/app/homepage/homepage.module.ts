@@ -6,12 +6,13 @@ import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { FcStrucDirective } from "./fc-struc-directive.directive";
 import { FcIteratorDirective } from "./iterator.directive";
-import { RestDataSource } from "../model/rest.datasource";
+import { RouterModule } from "@angular/router";
+
 
 
 
 @NgModule({
-  imports: [CommonModule, FormsModule, ModelModule, BrowserModule],
+  imports: [CommonModule, FormsModule, ModelModule, BrowserModule, RouterModule],
 
   declarations: [HomepageComponent,FcStrucDirective, FcIteratorDirective],
   

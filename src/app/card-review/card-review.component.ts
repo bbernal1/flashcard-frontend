@@ -11,7 +11,6 @@ import { ActivatedRoute } from "@angular/router";
 
 export class CardReviewComponent {
 
-  data: any;
 
   constructor(
     private repository: FlashcardRepository,

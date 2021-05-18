@@ -38,7 +38,7 @@ export class AddCardComponent{
   addCard(flashcard: Flashcard) {
     this.repository.addCard(flashcard);
     setTimeout(() => this.repository.updateCards(),1000);
-    this.router.navigateByUrl("")
+    this.router.navigateByUrl("/home")
   }
   get jsonCard() {
     return JSON.stringify(this.flashcard);

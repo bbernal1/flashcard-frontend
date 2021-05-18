@@ -23,15 +23,10 @@ export class FlashcardRepository {
         return this.flashcards;
     }
     updateCards() {
-        
-        // //console.log(JSON.stringify(this.flashcard))
         this.restDataSource.getCards().subscribe(data =>
             {
-                
                 this.flashcards = data;
-                
             });
-            //return this.flashcards
     }
     addCard(flashcard: Flashcard) {
         flashcard.easiness= 2.5;
