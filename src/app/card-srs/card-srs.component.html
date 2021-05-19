@@ -1,23 +1,31 @@
 <div class="container-fluid">
-  
   <div class="row">
     <div class="offset-md-4 col-md-4 col-12">
-      <button type="button" class="btn btn-primary" (click)="retHome()">Home</button>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary mb-3 mt-3" (click)="retHome()">Home</button>
+      </div>
+
       <div *ngIf="flashcards != null && flashcards.length != 0" class="card">
+
         <div *ngIf="!reviewDone">
+          
           <h5 class="card-header">
-            Click button to flip card for English Translation
+            Translate the word/phrase
           </h5>
           <div class="card-body">
-            <p class="card-text"> Japanese Word: {{flashcards[index].word}}</p>
+            <span>Japanese Word: {{ flashcards[index].word }}</span>
 
-            <a *ngIf="!flip" class="btn btn-primary" (click)="flipCard()"
-              >Get Translation</a
-            >
+            <button style="display: block;" *ngIf="!flip" class="btn btn-primary" type="button" (click)="flipCard()"
+              >Get Translation</button>
             <span *ngIf="flip" class="card-text">{{
               flashcards[index].translation
             }}</span>
-            <div *ngIf="flip" class="btn-group" role="group" aria-label="Basic example">
+            <div
+              *ngIf="flip"
+              class="btn-group"
+              role="group"
+              aria-label="Basic example"
+            >
               <button
                 type="button"
                 [disabled]="rated"
@@ -76,16 +84,13 @@
             </div>
           </div>
         </div>
-
         <div *ngIf="reviewDone">
-          <h5 class="card-header">
-            Card review is finished.
-          </h5>
-          <button type="button" class="btn btn-primary" (click) = retHome()>Home</button>
+          <h5 class="card-header">Card review is finished.</h5>
         </div>
+
       </div>
       <div *ngIf="flashcards == null || flashcards.length == 0" class="card">
-        <h5 class="card-header">No cards are currently due</h5>
+        <h5 class="card-header text-center">No cards are currently due</h5>
       </div>
     </div>
   </div>
