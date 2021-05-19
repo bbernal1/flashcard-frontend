@@ -26,11 +26,7 @@ const routes: Routes = [
   {
     path: "home",
     component: CardReviewComponent
-  }
-  // ,
-  // {
-  //   path: "**",
-  //   component: CardReviewComponent
-  // }
+  },
+  { path: "**", redirectTo: "home" }
 ];
 export const routing = RouterModule.forRoot(routes);
