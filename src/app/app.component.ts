@@ -8,7 +8,6 @@ import { FlashcardRepository } from './model/flashcard.repository';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Flashcard App';
   constructor(private repository: FlashcardRepository,private router: Router){}
   retHome() {
     this.repository.updateCards()
