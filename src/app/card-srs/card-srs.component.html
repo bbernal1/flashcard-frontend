@@ -2,6 +2,7 @@
   <div class="row">
     <div class="offset-md-4 col-md-4 col-12">
       <div *ngIf="flashcards != null && flashcards.length != 0" class="card">
+        <h5 *ngIf="reviewDone" class="card-header text-center">Card review is finished.</h5>
         <div *ngIf="!reviewDone">
           <h5 class="card-header">Translate the word/phrase</h5>
           <div class="card-body">
@@ -17,81 +18,80 @@
               </button>
             </div>
 
-            <p *ngIf="flip" class="card-text">Translation: <span style="color:#008855">{{ flashcards[index].translation }}</span></p>
+            <p *ngIf="flip" class="card-text">
+              Translation:
+              <span style="color: #008855">{{
+                flashcards[index].translation
+              }}</span>
+            </p>
             <p *ngIf="flip">
-              Rate the difficulty from hardest(1) to easiest(5)</p>
+              Rate the difficulty from hardest(1) to easiest(5)
+            </p>
 
-            
             <div
               *ngIf="flip"
               class="btn-group"
               role="group"
               aria-label="Basic example"
             >
- 
-                <button
-                  type="button"
-                  [disabled]="rated"
-                  class="btn btn-primary"
-                  value="1"
-                  (click)="sendRating($event)"
-                >
-                  1
-                </button>
-                <button
-                  type="button"
-                  [disabled]="rated"
-                  class="btn btn-primary"
-                  value="2"
-                  (click)="sendRating($event)"
-                >
-                  2
-                </button>
-                <button
-                  type="button"
-                  [disabled]="rated"
-                  class="btn btn-primary"
-                  value="3"
-                  (click)="sendRating($event)"
-                >
-                  3
-                </button>
-                <button
-                  type="button"
-                  [disabled]="rated"
-                  class="btn btn-primary"
-                  value="4"
-                  (click)="sendRating($event)"
-                >
-                  4
-                </button>
-                <button
-                  type="button"
-                  [disabled]="rated"
-                  class="btn btn-primary"
-                  value="5"
-                  (click)="sendRating($event)"
-                >
-                  5
-                </button>
-              </div>
-            </div>
-
-            <div *ngIf="rated == true">
-              <br />
-              <p class="card-text">
-                Due date is now {{ interval }} day(s) from now at the date
-                {{ showDueDate(dueDate) }}
-              </p>
-
-              <a class="btn btn-primary" (click)="nextCard()">Next card</a>
+              <button
+                type="button"
+                [disabled]="rated"
+                class="btn btn-primary"
+                value="1"
+                (click)="sendRating($event)"
+              >
+                1
+              </button>
+              <button
+                type="button"
+                [disabled]="rated"
+                class="btn btn-primary"
+                value="2"
+                (click)="sendRating($event)"
+              >
+                2
+              </button>
+              <button
+                type="button"
+                [disabled]="rated"
+                class="btn btn-primary"
+                value="3"
+                (click)="sendRating($event)"
+              >
+                3
+              </button>
+              <button
+                type="button"
+                [disabled]="rated"
+                class="btn btn-primary"
+                value="4"
+                (click)="sendRating($event)"
+              >
+                4
+              </button>
+              <button
+                type="button"
+                [disabled]="rated"
+                class="btn btn-primary"
+                value="5"
+                (click)="sendRating($event)"
+              >
+                5
+              </button>
             </div>
           </div>
+
+          <div *ngIf="rated == true">
+            <p class="card-text">
+              Due date is now {{ interval }} day(s) from now at the date
+              {{ showDueDate(dueDate) }}
+            </p>
+            <a class="btn btn-primary" (click)="nextCard()">Next card</a>
+          </div>
         </div>
-        <div *ngIf="reviewDone">
-          <h5 class="card-header">Card review is finished.</h5>
-        </div>
-      
+      </div>
+
       <div *ngIf="flashcards == null || flashcards.length == 0" class="card">
         <h5 class="card-header text-center">No cards are currently due</h5>
       </div>

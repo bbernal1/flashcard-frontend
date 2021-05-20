@@ -49,11 +49,12 @@ export class CardReviewComponent {
         this.screenWidth = window.innerWidth;
   }
 
-  getIdx(idx: number): number{
+
+  isSmall(): boolean {
     if(this.screenWidth < 768) {
-      return this.repository.getIdx()[idx];
+      return true;
     }
-    return idx + 1;
+    return false;
   }
 
 }
