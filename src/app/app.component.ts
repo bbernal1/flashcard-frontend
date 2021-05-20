@@ -12,6 +12,6 @@ export class AppComponent {
   constructor(private repository: FlashcardRepository,private router: Router){}
   retHome() {
     this.repository.updateCards()
-    setTimeout(() => this.router.navigateByUrl("/home"),500);    
+    this.router.navigateByUrl("/home");    
   }
 }
