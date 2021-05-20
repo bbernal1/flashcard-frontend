@@ -4,7 +4,7 @@
       <div *ngFor="let card of getCards(); let i = index">
         <div *ngIf = "i%3 == 0">
           <div class="card mb-3">
-            <h5 class="card-header">Card {{i+1}} </h5>
+            <h5 class="card-header">Card {{getIdx(i)}}</h5>
             <div class="card-body">
               <p class="card-text"> Word: {{ card.word }}</p>
               <p class="card-text"> Reading: {{ card.reading }}</p>
@@ -30,7 +30,7 @@
       <div *ngFor="let card of getCards(); let i = index">
         <div *ngIf="i % 3 == 1">
           <div class="card mb-3">
-            <h5 class="card-header">Card {{i+1}}</h5>
+            <h5 class="card-header">Card {{getIdx(i)}}</h5>
             <div class="card-body">
               <p class="card-text">Word: {{ card.word }}</p>
               <p class="card-text">Reading: {{ card.reading }}</p>
@@ -58,7 +58,7 @@
       <div *ngFor="let card of getCards(); let i = index">
         <div *ngIf="i % 3 == 2">
           <div class="card mb-3">
-            <h5 class="card-header">Card {{i+1}}</h5>
+            <h5 class="card-header">Card {{getIdx(i)}}</h5>
             <div class="card-body">
               <p class="card-text">Word: {{ card.word }}</p>
               <p class="card-text">Reading: {{ card.reading }}</p>

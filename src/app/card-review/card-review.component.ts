@@ -1,4 +1,4 @@
-import { Component} from "@angular/core";
+import { Component, HostListener} from "@angular/core";
 import { FlashcardRepository } from "../model/flashcard.repository";
 import { Flashcard } from "../model/flashcard.model";
 import { ActivatedRoute } from "@angular/router";
@@ -10,12 +10,17 @@ import { ActivatedRoute } from "@angular/router";
 })
 
 export class CardReviewComponent {
-
-
+  screenHeight: number;
+  screenWidth: number;
+  colLen: number;
+  
   constructor(
     private repository: FlashcardRepository,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) {
+    this.getScreenSize();
+    this.colLen = 0;
+  }
 
   getCards(): Flashcard[] {
     return this.repository.getCards();
@@ -37,4 +42,18 @@ export class CardReviewComponent {
     this.repository.deleteCard(flashcard);
     setTimeout(() => this.repository.updateCards(), 100);
   }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?) {
+        this.screenHeight = window.innerHeight;
+        this.screenWidth = window.innerWidth;
+  }
+
+  getIdx(idx: number): number{
+    if(this.screenWidth < 768) {
+      return this.repository.getIdx()[idx];
+    }
+    return idx + 1;
+  }
+
 }

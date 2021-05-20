@@ -7,8 +7,6 @@ import { FlashCardResolver } from './flashcard.resolver';
 
 @NgModule({
   imports: [HttpClientModule],
-  //providers: [FlashcardRepository, Flashcard, RestDataSource ]
-  //providers: []
   providers: [FlashcardRepository, RestDataSource, FlashCardResolver ]
 })
 

@@ -1,31 +1,50 @@
 import { Injectable } from "@angular/core";
 import { Flashcard } from "./flashcard.model";
 import { RestDataSource } from "./rest.datasource";
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+
 
 @Injectable()
 export class FlashcardRepository {
     
     public flashcards: Flashcard[];
+    public arr: number[];
+
     constructor(private restDataSource: RestDataSource) {
-        this.restDataSource.getCards().subscribe(data =>
-            {
-                
-                this.flashcards = data;
-                
-            });
+        this.updateCards();
     }
 
+    getIdx():number[] {
+        return this.arr;
+    }
+    
     getCards(): Flashcard[] {
-        
-        // //console.log(JSON.stringify(this.flashcard))
         return this.flashcards;
     }
     updateCards() {
         this.restDataSource.getCards().subscribe(data =>
             {
                 this.flashcards = data;
+                let n = this.flashcards.length;
+                let idx = 1;
+                this.arr = new Array(n);
+                for(let i = 0; i < n; i++) {
+                    //map numbers to index for single column
+                    if (i%3 == 0) {
+                        this.arr[i] = idx++;
+                    }
+                }
+                for(let i = 0; i < n; i++) {
+                    //map numbers to index for single column
+                    if (i%3 == 1) {
+                        this.arr[i] = idx++;
+                    }
+                }
+                for(let i = 0; i < n; i++) {
+                    //map numbers to index for single column
+                    if (i%3 == 2) {
+                        this.arr[i] = idx++;
+                    }
+                }
             });
     }
     addCard(flashcard: Flashcard) {
@@ -37,7 +56,6 @@ export class FlashcardRepository {
     }
 
     deleteCard(flashcard: Flashcard) {
-        console.log("in repo");
         this.restDataSource.deleteCard(flashcard, flashcard.id).subscribe();
     }
 

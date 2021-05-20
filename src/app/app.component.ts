@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FlashcardRepository } from './model/flashcard.repository';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Flashcard App';
+  constructor(private repository: FlashcardRepository,private router: Router){}
+  retHome() {
+    this.repository.updateCards()
+    setTimeout(() => this.router.navigateByUrl("/home"),500);    
+  }
 }

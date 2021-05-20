@@ -1,8 +1,6 @@
-
 <div class="container-fluid">
   <div class="row">
     <div class="offset-md-4 col-md-4 col-12">
-  <!-- <div class="bg-info text-white mb-2 p-2">Model Data: {{ jsonCard }}</div> -->
   <form novalidate (ngSubmit)="addCard(flashcard)">
     <div class="form-group">
       <label>Word/Phrase</label
@@ -54,7 +52,6 @@
       </ul>
     </div>
     <button class="btn btn-primary btn-sm mr-3" type="submit">{{editing == true ? "Save" : "Create"}}</button>
-    <button class="btn btn-primary btn-sm" type="button" routerLink="/home">Back</button>  
   </form>
 </div>
 </div>

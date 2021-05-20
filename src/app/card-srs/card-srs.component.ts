@@ -14,12 +14,11 @@ export class CardSrsComponent implements OnInit{
   index: number;
   data: any;
   flip: boolean;
-
   rated: boolean;
   reviewDone: boolean;
-  
   dueDate: number;
   interval: number;
+  
   constructor(private repository: FlashcardRepository, private router: Router) {
     this.index = 0;
     this.flip = false;
@@ -27,10 +26,6 @@ export class CardSrsComponent implements OnInit{
     setTimeout(() => this.getCards(),1);
   }
 
-  test() {
-    console.log(this.flashcards.toString())
-  }
-  
   xd() {
     return this.repository.getCards();
   }
@@ -40,7 +35,6 @@ export class CardSrsComponent implements OnInit{
       let dueDate = new Date(flashcard.dueDate*1000);
       let curDate = new Date(Date.now());
       if (dueDate.getMonth() < curDate.getMonth()) {
-        console.log("in 1st")
         return true;
       }
       else if (dueDate.getMonth() == curDate.getMonth()) {
