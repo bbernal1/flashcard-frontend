@@ -57,4 +57,14 @@ export class CardReviewComponent {
     return false;
   }
 
+  restoreDefault() {
+    this.repository.deleteAllCards();
+    this.repository.addDefaultCards();
+    setTimeout(() => this.repository.updateCards(), 1000);
+  }
+
+  deleteAllCards(){
+    this.repository.deleteAllCards();
+    setTimeout(() => this.repository.updateCards(), 1000);
+  }
 }
