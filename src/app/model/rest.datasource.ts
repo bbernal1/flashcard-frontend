@@ -9,7 +9,7 @@ import { Flashcard } from "./flashcard.model";
 export class RestDataSource {
   baseUrl: string;
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:8080/";
+    this.baseUrl = "https://jpflashcards.herokuapp.com:80/";
   }
 
   //GET SCHEDULED CARDS
