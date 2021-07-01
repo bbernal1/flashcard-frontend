@@ -3,7 +3,7 @@ import { AddCardComponent} from "./add-card/add-card.component";
 import { CardReviewComponent } from "./card-review/card-review.component";
 import { CardSrsComponent } from "./card-srs/card-srs.component";
 import { HomepageComponent } from "./homepage/homepage.component";
-import { FlashCardResolver } from "./model/flashcard.resolver";
+import { FlashcardResolver } from "./model/flashcard.resolver";
 import { SchedResolver } from "./model/sched.resolver";
 
 const routes: Routes = [
@@ -26,6 +26,7 @@ const routes: Routes = [
   {
     path: "home",
     component: CardReviewComponent
+    ,resolve: { resolver: FlashcardResolver }
   },
   { path: "**", redirectTo: "home" }
 ];

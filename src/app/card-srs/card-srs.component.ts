@@ -31,6 +31,7 @@ export class CardSrsComponent implements OnInit{
   }
 
   getCards() {
+    
     this.flashcards = this.repository.getCards().filter((flashcard) => {
       let dueDate = new Date(flashcard.dueDate*1000);
       let curDate = new Date(Date.now());
@@ -38,7 +39,8 @@ export class CardSrsComponent implements OnInit{
         return true;
       }
       else if (dueDate.getMonth() == curDate.getMonth()) {
-        if (dueDate.getDay() <= curDate.getDay()){
+        if (dueDate.getDate() <= curDate.getDate()){
+          
           return true;
         }
       }

@@ -3,9 +3,8 @@
     <div class="text-center col-12 mb-3">
       <button class="btn btn-danger btn-sm mr-3" (click) = "deleteAllCards()">Delete all cards</button>
       <button class="btn btn-primary btn-sm" (click) = "restoreDefault()">Restore to default</button>
-   
     </div>
-    <div *ngIf="isSmall() == true" class="col-md-4">
+    <div *ngIf="isSmall() == true" class="col-12">
 
       <div *ngFor="let card of getCards(); let i = index">
         <div class="card mb-3">

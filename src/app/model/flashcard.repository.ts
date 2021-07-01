@@ -8,6 +8,7 @@ export class FlashcardRepository {
   public orig: string[][];
 
   constructor(private restDataSource: RestDataSource) {
+    this.flashcards = [];
     this.updateCards();
     this.orig = [];
 

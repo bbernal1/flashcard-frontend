@@ -3,11 +3,11 @@ import { Flashcard } from "./flashcard.model";
 import { FlashcardRepository } from "./flashcard.repository";
 import { RestDataSource } from "./rest.datasource";
 import { HttpClientModule } from "@angular/common/http";
-import { FlashCardResolver } from './flashcard.resolver';
+import { FlashcardResolver } from './flashcard.resolver';
 
 @NgModule({
   imports: [HttpClientModule],
-  providers: [FlashcardRepository, RestDataSource, FlashCardResolver ]
+  providers: [FlashcardRepository, RestDataSource, FlashcardResolver ]
 })
 
 export class ModelModule {}
