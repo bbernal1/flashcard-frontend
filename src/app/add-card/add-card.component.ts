@@ -40,5 +40,4 @@ export class AddCardComponent{
     setTimeout(() => this.repository.updateCards(),1000);
     this.router.navigateByUrl("/home");
   }
-
 }
