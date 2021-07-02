@@ -20,11 +20,15 @@ This section will review cards that are due today or past due
 ### Version History
 version 0.1.0
 Started project
+
 version 0.2.0
 Added component for reviewing all cards
+
 version 0.3.0
 Added component for reviewing scheduled cards and routing
+
 version 0.4.0
 Added homepage component
+
 version 1.0
 Application in released state
