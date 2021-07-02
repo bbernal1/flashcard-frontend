@@ -9,7 +9,7 @@ import { filter } from "rxjs/operators";
 })
 export class MessageComponent {
   public lastMessage: Message;
-  constructor(messageService: MessageService, router: Router) {
+  constructor(public messageService: MessageService, public router: Router) {
     messageService.registerMessageHandler((m) => (this.lastMessage = m));
     router.events
       .pipe(
