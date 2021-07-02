@@ -9,19 +9,23 @@ import { SchedResolver } from "./model/sched.resolver";
 const routes: Routes = [
   {
     path: "about",
-    component: HomepageComponent
+    component: HomepageComponent,
+    resolve: { resolver: FlashcardResolver }
   },
   {
     path: "review",
-    component: CardSrsComponent
+    component: CardSrsComponent,
+    resolve: { resolver: FlashcardResolver }
   },
   {
     path: "add",
     component: AddCardComponent,
+    resolve: { resolver: FlashcardResolver }
   },
   {
     path: "form/:mode/:id",
     component: AddCardComponent,
+    resolve: { resolver: FlashcardResolver }
   },
   {
     path: "home",

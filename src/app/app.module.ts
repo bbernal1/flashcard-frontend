@@ -1,6 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { CardReviewModule } from "./card-review/card-review.module";
 import { FlashcardResolver } from "./model/flashcard.resolver";
@@ -24,7 +23,7 @@ import { MessageModule } from "./messages/message.module";
     MessageModule
   ],
   exports: [],
-  providers: [FlashcardResolver,SchedResolver],
+  providers: [FlashcardResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

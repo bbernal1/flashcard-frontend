@@ -16,7 +16,7 @@ export class FlashcardResolver implements Resolve<any> {
     resolve(route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot) : Observable<Flashcard[]> {
             if (this.flashcardRepository.getCards().length == 0) {
-                this.messages.reportMessage(new Message("Loading data..."));
+                this.messages.reportMessage(new Message("Retrieving flashcards..."));
                 return this.restDataSource.getCards();
             }
         }

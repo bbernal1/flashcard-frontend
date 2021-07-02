@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="offset-md-4 col-md-4 col-12">
-      <div *ngIf="flashcards != null && flashcards.length != 0" class="card">
-        <h5 *ngIf="reviewDone" class="card-header text-center">Card review is finished.</h5>
-        <div *ngIf="!reviewDone">
+      <div *ngIf="flashcards != null && flashcards.length != 0">
+        <h5 *ngIf="reviewDone" class="text-center rcorners4">Card review is finished.</h5>
+        <div class = "card" *ngIf="!reviewDone">
           <h5 class="card-header">Translate the word/phrase</h5>
           <div class="card-body">
             <p>Japanese Word: {{ flashcards[index].word }}</p>
@@ -92,8 +92,8 @@
         </div>
       </div>
 
-      <div *ngIf="flashcards == null || flashcards.length == 0" class="card">
-        <h5 class="card-header text-center">No cards are currently due</h5>
+      <div *ngIf="flashcards == null || flashcards.length == 0" class="rcorners3">
+        <h5 class="text-center">No cards are currently due</h5>
       </div>
     </div>
   </div>
