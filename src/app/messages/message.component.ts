@@ -8,8 +8,8 @@ import { filter } from "rxjs/operators";
   templateUrl: "message.component.html",
 })
 export class MessageComponent {
-  public lastMessage: Message;
-  constructor(public messageService: MessageService, public router: Router) {
+  lastMessage: Message;
+  constructor(messageService: MessageService, router: Router) {
     messageService.registerMessageHandler((m) => (this.lastMessage = m));
     router.events
       .pipe(
