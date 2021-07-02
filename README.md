@@ -1,6 +1,6 @@
 
 # Flashcard Application using Angular
-# Eventually I will host this app publicly for any prospective employers who want to see my work.
+# The application is hosted at [https://jpcards.herokuapp-com]
 
 This is a pet project to display skills in using Java and Angular to create a fullstack application. I personally have an interest in learning Japanese and discovered Spaced Repetition applications such as Anki and Memrise which help in learning vocabulary. Therefore, I thought I could combine my passion for programming and create an application of my own that uses a Spaced Repetition algorithm to help me learn Japanese. This app is primarily for learning purposes and as a result will be constantly changing as my skills in Angular increase. 
 
