@@ -26,9 +26,7 @@ export class CardSrsComponent implements OnInit{
     setTimeout(() => this.getCards(),1);
   }
 
-  xd() {
-    return this.repository.getCards();
-  }
+
 
   getCards() {
     
@@ -45,7 +43,8 @@ export class CardSrsComponent implements OnInit{
         }
       }
       return false;
-    });                                                   
+    });     
+                                             
   }
 
   flipCard() {

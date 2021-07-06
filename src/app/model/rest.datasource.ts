@@ -12,10 +12,6 @@ export class RestDataSource {
     this.baseUrl = "https://jpflashcards.herokuapp.com:443/";
   }
 
-  //GET SCHEDULED CARDS
-  getSched(): Observable<Flashcard[]> {
-    return this.httpClient.get<Flashcard[]>(this.baseUrl + "scheduled");
-  }
 
   //GET ALL CARDS
   getCards(): Observable<Flashcard[]> {

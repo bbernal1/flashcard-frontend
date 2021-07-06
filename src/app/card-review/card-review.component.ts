@@ -40,7 +40,7 @@ export class CardReviewComponent {
 
   deleteCard(flashcard: Flashcard) {
     this.repository.deleteCard(flashcard);
-    setTimeout(() => this.repository.updateCards(), 100);
+    setTimeout(() => this.repository.updateCards(), 500);
   }
 
   @HostListener('window:resize', ['$event'])

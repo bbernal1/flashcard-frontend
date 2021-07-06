@@ -74,13 +74,16 @@ export class FlashcardRepository {
     return this.restDataSource.sendRating(flashcard, quality);
   }
   deleteAllCards() {
-    console.log("deleting");
-    for (let idx = 0; idx < this.flashcards.length; idx++) {
-      this.deleteCard(this.flashcards[idx]);
+    if (this.flashcards.length != 0) {
+      for (let idx = 0; idx < this.flashcards.length; idx++) {
+        this.deleteCard(this.flashcards[idx]);
+      }
     }
   }
   addDefaultCards() {
-    console.log("adding");
+    if (this.flashcards.length != 0) {
+      this.deleteAllCards();
+    }
     for (let i = 0; i < 7; i++) {
       let flashcard: Flashcard = new Flashcard();
       flashcard.word = this.orig[i][0];
