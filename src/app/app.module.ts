@@ -4,7 +4,6 @@ import { AppComponent } from "./app.component";
 import { CardReviewModule } from "./card-review/card-review.module";
 import { FlashcardResolver } from "./model/flashcard.resolver";
 import { CardSrsModule } from './card-srs/card-srs.module';
-import { SchedResolver } from './model/sched.resolver';
 import { AddCardModule } from "./add-card/add-card.module";
 import { routing } from "./app.routing";
 import { HomepageModule } from "./homepage/homepage.module";

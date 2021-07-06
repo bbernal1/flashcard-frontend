@@ -4,7 +4,6 @@ import { CardReviewComponent } from "./card-review/card-review.component";
 import { CardSrsComponent } from "./card-srs/card-srs.component";
 import { HomepageComponent } from "./homepage/homepage.component";
 import { FlashcardResolver } from "./model/flashcard.resolver";
-import { SchedResolver } from "./model/sched.resolver";
 
 const routes: Routes = [
   {
