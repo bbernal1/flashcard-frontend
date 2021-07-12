@@ -25,7 +25,7 @@ This program is written in Typescript using the Angular framework. The Flashcard
 **Module:** card-srs  
 **Description:** This module contains the component and template that are responsible for the card review feature where the user can review cards that are due for review. The card-srs component filters the cards from the Flashcards array based on the due date.
   
-**Module:** model
+**Module:** model  
 **Description:** This module contains the Flashcard class that models a Flashcard in the database. The RestDatasource and FlashcardRepository classes are also declared for retriving and managing the flashcard data. The properties of the class correspond to the properties of the Flashcard java class in the associated backend application. The module also declares a FlashcardResolver service which is used as a resolver for all of the templates in the application. The resolver will check if the Flashcards array is null or empty and display a message to the user stating that the flashcards are still being retrieved. The message is sent via the MessageService object.
 
 **Module:** Messages  
